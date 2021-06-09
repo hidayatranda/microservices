@@ -1,29 +1,31 @@
 module.exports = (sequelize, DataTypes) => {
     const RefreshToken = sequelize.define('RefreshToken', {
         id: {
-            types: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
         token: {
-            types: DataTypes.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         user_id: {
-            types: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
-        created_at: {
-            field: 'created_at'
-            types: DataTypes.DATE
+        createdAtat: {
+            field: 'created_at',
+            type: DataTypes.DATE,
+            allowNull: false
         },
-        updated_at: {
-            field: 'updated_at'
-            types: DataTypes.DATE
+        updatedAt: {
+            field: 'updated_at',
+            type: DataTypes.DATE,
+            allowNull: false
         }    
     }, {
-        tableName: 'refresh_tokens'
+        tableName: 'refresh_tokens',
         timestamps: true
     });
     return RefreshToken;
